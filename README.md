@@ -57,17 +57,18 @@ Requirements:
 * wget
 * tar
 
-brut3k1t exists as a singular Python executable, with core libraries and other dependency code residing in `core` and `src`.
+brut3k1t is available on PyPI! You can install using `pip`:
 
-    git clone https://github.com/ex0dus-0x/brut3k1t.git && cd brut3k1t
+```
+$ pip install brut3k1t
+```
 
-Use the installer to install the proper requirements. This should work on a majority of Linux distributions:
+Or, if you choose to build from source:
 
-    ./installer
-
-And run!
-
-    ./brut3k1t -h
+```
+$ git clone https://github.com/ex0dus-0x/brut3k1t && cd brut3k1t/
+$ python setup.py install
+```
 
 ## 3. Troubleshooting
 
@@ -83,7 +84,7 @@ Web-based services often change their authentication page front-end. If this is 
 
 Utilizing __brut3k1t__ is a little more complicated than just running a Python file.
 
-Typing `./brut3k1t -h` shows the help menu:
+Typing `brut3k1t -h` shows the help menu:
 
     usage: brut3k1t [-h] [-s] [-u USERNAME] [-w WORDLIST] [-a ADDRESS] [-p PORT]
                 [-d DELAY]
@@ -118,33 +119,33 @@ Note that with the new release of the hashcrack feature, the `--username` flag i
 
 Cracking SSH server running on `192.168.1.3` using `root` and `wordlist.txt` as a wordlist.
 
-    ./brut3k1t -s ssh -a 192.168.1.3 -u root -w wordlist.txt
+    brut3k1t -s ssh -a 192.168.1.3 -u root -w wordlist.txt
 
 The program will automatically set the port to 22, but if it is different, specify with `-p` flag.
 
 Cracking email `test@gmail.com` with `wordlist.txt` on port `25` with a 3 second delay. For email it is necessary to use the SMTP server's address. For e.g Gmail = `smtp.gmail.com`. You can research this using Google.
 
-    ./brut3k1t -s smtp -a smtp.gmail.com -u test@gmail.com -w wordlist.txt -p 25 -d 3
+    brut3k1t -s smtp -a smtp.gmail.com -u test@gmail.com -w wordlist.txt -p 25 -d 3
 
 Cracking XMPP `test@creep.im` with `wordlist.txt` on default port `5222`. XMPP also is similar to SMTP, whereas you will need to provide the address of the XMPP server, in this case `creep.im`.
 
-    ./brut3k1t -s xmpp -a creep.im -u test -w wordlist.txt
+    brut3k1t -s xmpp -a creep.im -u test -w wordlist.txt
 
 Cracking Facebook requires either the username (preferable, in this case, `test`), email, phone number, or even ID.
 
-    ./brut3k1t -s facebook -u test -w wordlist.txt
+    brut3k1t -s facebook -u test -w wordlist.txt
 
 Cracking Instagram with username `test` with wordlist `wordlist.txt` and a 5 second delay
 
-     ./brut3k1t -s instagram -u test -w wordlist.txt -d 5
+    brut3k1t -s instagram -u test -w wordlist.txt -d 5
 
 Cracking Twitter with username `test` with wordlist `wordlist.txt`
 
-     ./brut3k1t -s twitter -u test -w wordlist.txt
+    brut3k1t -s twitter -u test -w wordlist.txt
 
 Cracking a MD5 hash (where username is the hashstring) with wordlist `wordlist.txt`
 
-    ./brut3k1t -s md5 -u 86bd1db79525abdd576165c1427f9bf6 -w wordlist.txt
+    brut3k1t -s md5 -u 86bd1db79525abdd576165c1427f9bf6 -w wordlist.txt
 
 
 ## 6. KEY NOTES TO REMEMBER
